@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             });
                     }, 300);
                 }
-            }, i * 5); // 5ms delay between each pixel
+            }, i * 2); // 5ms delay between each pixel
         }
     }
     
