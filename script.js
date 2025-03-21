@@ -122,18 +122,28 @@ document.addEventListener('DOMContentLoaded', function() {
     function downloadQRCode() {
         if (!qrCode) return;
         
-    // Get the QR code image
-    const imgSrc = qrContainer.querySelector('img').src;
+        // Get the QR code image
+        html2canvas(qrContainer).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
         
-    // Create a download link
-    const link = document.createElement('a');
-    link.href = imgSrc;
-    link.download = 'qrcode.png';
+        // Create a download link
+        const link = document.createElement('a');
+        link.href = imgData;
+        link.download = 'qrcode.png';
         
-    // Simulate click to download
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+        // Simulate click to download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        });
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
     }
     
     generateBtn.addEventListener('click', generateQRCode);
