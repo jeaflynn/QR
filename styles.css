@@ -195,6 +195,13 @@ button:disabled {
     width: 100%;
 }
 
+.pixel-block {
+    background-color: black;
+    position: absolute;
+    transition: opacity 0.1s ease;
+    opacity: 0;
+}
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .options-container {
