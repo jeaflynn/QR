@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev QR Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="editor-header">
+            <div class="window-controls">
+                <span class="control red"></span>
+                <span class="control yellow"></span>
+                <span class="control green"></span>
+            </div>
+            <div class="title-text">qr-generator.js</div>
+        </div>
+        
+        <h1><span class="keyword">const</span> <span class="variable">qrGenerator</span> <span class="operator">=</span> <span class="function">new</span> <span class="class">QRGenerator</span><span class="punctuation">();</span></h1>
+        
+        <div class="editor-section">
+            <div class="line-numbers">1</div>
+            <div class="form-container">
+                <input type="text" id="qr-text" placeholder="// Enter URL or text...">
+                
+                <div class="options-container">
+                    <div class="option-group">
+                        <label for="qr-size">Size:</label>
+                        <select id="qr-size">
+                            <option value="100">Small</option>
+                            <option value="200" selected>Medium</option>
+                            <option value="300">Large</option>
+                            <option value="400">Extra Large</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button id="generate-btn"><i class="fas fa-code"></i> Generate QR Code</button>
+            </div>
+        </div>
+        
+        <div class="editor-section result-section">
+            <div class="line-numbers">2</div>
+            <div class="qr-container">
+                <div id="qr-code"></div>
+                <div class="download-container">
+                    <button id="download-btn" disabled><i class="fas fa-download"></i> Download QR Code</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
