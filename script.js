@@ -147,6 +147,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const link = document.createElement('a');
         link.href = hiddenQR.src;
         link.download = 'qrcode.png';
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 
     function shuffleArray(array) {
